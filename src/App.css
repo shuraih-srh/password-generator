@@ -1,0 +1,243 @@
+:root {
+  --accent-color: #5c67e0;
+}
+
+.app {
+  color: white;
+  width: 600px;
+  background-color: #0a0e30;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+  border-radius: 20px;
+  gap: 30px;
+}
+
+.app > div {
+  width: 100%;
+}
+
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 2.2rem;
+}
+
+.output {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3e3d7e;
+  padding: 10px 25px;
+  border-radius: 10px;
+}
+
+.output p {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  word-break: break-all;
+}
+
+.icons-div * {
+  display: inline-block;
+  font-size: 2.2rem;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bi-arrow-repeat:active {
+  transform: rotate(135deg);
+}
+
+form {
+  width: 100%;
+  padding-top: 10px;
+}
+
+.options {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+@media screen and (max-width: 650px) {
+  .options {
+    grid-template: repeat(4, 1fr) / 1fr;
+  }
+
+  .app {
+    width: 90vw;
+    margin: auto;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  .app h1 {
+    font-size: 1.8rem;
+  }
+}
+
+#range {
+  min-width: 0;
+  width: 75%;
+  height: 8px;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 10px;
+  background-color: var(--accent-color);
+  cursor: pointer;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  height: 30px;
+  width: 8px;
+  border-radius: 25px;
+  -webkit-appearance: none;
+  background: white;
+}
+
+.range-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding: 15px;
+  align-items: center;
+  background-color: #1c2040;
+  border-radius: 8px;
+}
+
+.option p {
+  display: inline;
+  font-size: 1.1rem;
+  color: white;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-btn {
+  text-align: left;
+  background-color: #ffffff;
+  width: 70px;
+  height: 34px;
+  position: relative;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toggle-btn:hover {
+  transform: scale(1.05);
+}
+
+.toggle-btn::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  border-radius: 100px;
+  height: 24px;
+  margin: 5px;
+  background-color: var(--accent-color);
+  transition: all 0.2s linear;
+}
+
+input[type="checkbox"]:checked + .toggle-btn {
+  background-color: var(--accent-color);
+}
+
+input[type="checkbox"]:checked + .toggle-btn::before {
+  transform: translateX(36px);
+  left: auto;
+  background-color: white;
+}
+
+form button {
+  width: 200px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.1rem;
+  background-image: linear-gradient(to right, #4d8fdb, #3945f1);
+  color: white;
+  cursor: pointer;
+  transition: background-image 0.5s ease-in;
+}
+
+form button:hover {
+  background-image: linear-gradient(to left, #4d8fdb, #3945f1);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.bi-shield-fill-x {
+  color: rgb(226, 15, 15);
+}
+
+.bi-shield-fill-exclamation {
+  color: rgb(255, 255, 0);
+}
+
+.bi-shield-fill-check {
+  color: rgb(23, 223, 23);
+}
+
+.pass-info .bi-shield-shaded {
+  color: #ff7b00;
+}
+
+.pass-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.1rem;
+}
+
+.pass-info p {
+  background-color: #1c2040;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.pass-info p:nth-child(1) {
+  width: 150px;
+}
+
+.pass-info i {
+  font-style: normal;
+}
+
+@keyframes FADE {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn-text {
+  animation: FADE 1s;
+}
